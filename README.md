@@ -3,4 +3,4 @@
 
 За определяне на алкохолния градус се използва "Таблица за корекция показанията на спиртомера" в обхват от 5.5 до 100 об.% и температура от 0° до 30°.
 
-Актуална версия на приложението може да [изтеглите от тук](https://drive.google.com/file/d/1pxvYbR4wLCiUCvDGWHLwIM3VUdgUn9rV/view?usp=sharing)
+Актуална версия на приложението може да [изтеглите от тук](https://drive.google.com/file/d/1pxvYbR4wLCiUCvDGWHLwIM3VUdgUn9rV/view?usp=sharing) (Google Drive) или от секция Releases
