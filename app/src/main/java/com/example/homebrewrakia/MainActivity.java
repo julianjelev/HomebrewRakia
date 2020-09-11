@@ -18,6 +18,7 @@ public class MainActivity extends AppCompatActivity {
         Button btnChaptalization = findViewById(R.id.btnChaptalization);
         Button btnSugarCorrection = findViewById(R.id.btnSugarCorrection);
         Button btnSulfite = findViewById(R.id.btnSulfite);
+        btnSulfite.setVisibility(View.INVISIBLE);
 
         //Define and attach click listeners
         btnSolution.setOnClickListener(new View.OnClickListener() {
