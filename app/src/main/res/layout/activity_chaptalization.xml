@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v4.widget.NestedScrollView
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:tools="http://schemas.android.com/tools"
+        android:layout_height="match_parent"
+        android:layout_width="match_parent"
+        android:fillViewport="true">
+    <android.support.constraint.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="700dp"
+            tools:context=".ChaptalizationActivity">
+        <TextView
+                android:text="@string/lblTitle_activity_chaptalization"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" android:id="@+id/lblTitle"
+                android:textSize="24sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toTopOf="@+id/lblDescription"/>
+        <TextView
+                android:text="@string/lblDescription_activity_chaptalization"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" android:id="@+id/lblDescription"
+                android:paddingLeft="20dp" android:paddingTop="10dp" android:paddingRight="20dp"
+                android:paddingBottom="10dp"
+                android:textSize="14sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+
+                app:layout_constraintTop_toBottomOf="@+id/lblTitle"
+                app:layout_constraintBottom_toTopOf="@id/lblSourceDegree"/>
+        <!-- SourceDegree -->
+        <TextView
+                android:text="@string/lblSourceDegree_activity_chaptalization"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" android:id="@+id/lblSourceDegree"
+                android:textSize="18sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+
+                app:layout_constraintTop_toBottomOf="@+id/lblDescription"
+                app:layout_constraintBottom_toTopOf="@+id/txtSourceDegree"/>
+        <EditText
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:inputType="numberDecimal"
+                android:digits="-0123456789.,"
+                android:ems="5"
+                android:id="@+id/txtSourceDegree"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/btnCorrectSourceDegree"
+
+                app:layout_constraintTop_toBottomOf="@+id/lblSourceDegree"
+                app:layout_constraintBottom_toTopOf="@+id/lblSourceVolume"
+                android:text="@string/txtSourceDegree_activity_chaptalization" android:importantForAutofill="no"
+                android:hint="@string/lblSourceDegree_activity_chaptalization" android:singleLine="true"/>
+        <Button
+                android:text="@string/btnCorrectSourceDegree_activity_chaptalization"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" android:id="@+id/btnCorrectSourceDegree"
+                app:layout_constraintStart_toEndOf="@+id/txtSourceDegree"
+                app:layout_constraintEnd_toEndOf="parent"
+
+                app:layout_constraintTop_toBottomOf="@+id/lblSourceDegree"
+                app:layout_constraintBottom_toTopOf="@+id/lblSourceVolume"/>
+        <!-- SourceVolume -->
+        <TextView
+                android:text="@string/lblSourceVolume_activity_chaptalization"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" android:id="@+id/lblSourceVolume"
+                android:textSize="18sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+
+                app:layout_constraintTop_toBottomOf="@+id/txtSourceDegree"
+                app:layout_constraintBottom_toTopOf="@+id/txtSourceVolume"/>
+        <EditText
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:inputType="numberDecimal"
+                android:digits="0123456789.,"
+                android:ems="5"
+                android:id="@+id/txtSourceVolume"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+
+                app:layout_constraintTop_toBottomOf="@+id/lblSourceVolume"
+                app:layout_constraintBottom_toTopOf="@+id/lblSugarDensity"
+                android:text="@string/txtSourceVolume_activity_chaptalization" android:importantForAutofill="no"
+                android:hint="@string/lblSourceVolume_activity_chaptalization" android:singleLine="true"/>
+        <!-- SugarDensity -->
+        <TextView
+                android:text="@string/lblSugarDensity_activity_chaptalization"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" android:id="@+id/lblSugarDensity"
+                android:textSize="18sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+
+                app:layout_constraintTop_toBottomOf="@+id/txtSourceVolume"
+                app:layout_constraintBottom_toTopOf="@+id/txtSugarDensity" android:paddingLeft="20dp"
+                android:paddingRight="20dp"/>
+        <EditText
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:inputType="numberDecimal"
+                android:digits="0123456789.,"
+                android:ems="5"
+                android:id="@+id/txtSugarDensity"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+
+                app:layout_constraintTop_toBottomOf="@+id/lblSugarDensity"
+                app:layout_constraintBottom_toTopOf="@+id/lblTargetDegree"
+                android:text="@string/txtSugarDensity_activity_chaptalization" android:importantForAutofill="no"
+                android:hint="@string/lblSugarDensity_activity_chaptalization" android:singleLine="true"/>
+        <!-- TargetDegree -->
+        <TextView
+                android:text="@string/lblTargetDegree_activity_chaptalization"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" android:id="@+id/lblTargetDegree"
+                android:textSize="18sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+
+                app:layout_constraintTop_toBottomOf="@+id/txtSugarDensity"
+                app:layout_constraintBottom_toTopOf="@+id/txtTargetDegree"/>
+        <EditText
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:inputType="numberDecimal"
+                android:digits="0123456789.,"
+                android:ems="5"
+                android:id="@+id/txtTargetDegree"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+
+                app:layout_constraintTop_toBottomOf="@+id/lblTargetDegree"
+                app:layout_constraintBottom_toTopOf="@+id/btnChaptalizationOK"
+                android:text="@string/txtTargetDegree_activity_chaptalization" android:importantForAutofill="no"
+                android:hint="@string/lblTargetDegree_activity_chaptalization" android:singleLine="true"/>
+        <!-- btnChaptalizationOK -->
+        <Button
+                android:text="@string/btnChaptalizationOK_activity_chaptalization"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" android:id="@+id/btnChaptalizationOK"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+
+                app:layout_constraintTop_toBottomOf="@+id/txtTargetDegree"
+                app:layout_constraintBottom_toTopOf="@+id/lblResult"/>
+
+        <!-- Result -->
+        <TextView
+                android:text="@string/lblResult_activity_chaptalization"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" android:id="@+id/lblResult"
+                android:textSize="14sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+
+                app:layout_constraintTop_toBottomOf="@+id/btnChaptalizationOK"
+                app:layout_constraintBottom_toTopOf="@+id/txtResult" android:textColor="@color/colorPrimaryDark"/>
+        <EditText
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:inputType="numberDecimal"
+                android:digits="0123456789.,"
+                android:ems="5"
+                android:id="@+id/txtResult"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/btnChaptalizationOK"
+                app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintEnd_toEndOf="parent"
+                android:text="@string/txtResult_activity_chaptalization" android:importantForAutofill="no"
+                android:textColor="@color/colorPrimaryDark" tools:ignore="LabelFor" android:singleLine="true"/>
+    </android.support.constraint.ConstraintLayout>
+</android.support.v4.widget.NestedScrollView>

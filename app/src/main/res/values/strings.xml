@@ -1,21 +1,41 @@
 <resources>
-    <string name="app_name">Домашна ракия</string>
-    <string name="btnSolution_activity_main">Разреждане на ракия</string>
-    <string name="btnCorrection_activity_main">определяне на градуса</string>
+    <string name="app_name">Домашна ракия и вино</string>
+    <!-- activity_main -->
     <string name="imageViewLogo_activity_main">Наздраве!</string>
-    <string name="lblInputDegree_activity_correction">показания на спиртомера(5.5 – 100)</string>
-    <string name="lblInputTemperature_activity_correction">показания на термометъра(0 – 30)</string>
+    <string name="btnSolution_activity_main">Разреждане на ракия</string>
+    <string name="btnCorrection_activity_main">Определяне на градуса</string>
+    <string name="btnChaptalization_activity_main">Шаптализация на гроздова мъст</string>
+    <string name="btnSugarCorrection_activity_main">Определяне на захарност</string>
+    <string name="btnSulfite_activity_main">Сулфитиране на вино</string>
+    <!-- activity_correction -->
     <string name="lblTitle_activity_correction">Определяне на градуса</string>
     <string name="lblDescription_activity_correction">За да определите градуса на ракията са ви нужни битов спиртомер и
         термометър.
         Поставете уредите в съда с течността и изчакайте до отчитане на стабилни стойности. Въведете отчетените
         стойности в полетата по-долу и натиснете бутона [измери]
     </string>
-    <string name="btnCorrectionOK_activity_correction">измери</string>
+    <string name="lblInputTemperature_activity_correction">показания на термометъра(0°C – 30°C)</string>
     <string name="txtInputTemperature_activity_correction">20</string>
+    <string name="lblInputDegree_activity_correction">показания на спиртомера(5.5 – 100)</string>
     <string name="txtInputDegree_activity_correction">60</string>
+    <string name="btnCorrectionOK_activity_correction">измери</string>
     <string name="lblResult_activity_correction">градус на ракията</string>
     <string name="txtResult_activity_correction"/>
+    <!-- activity_sugar_correction -->
+    <string name="lblTitle_activity_sugar_correction">Определяне на захарност °Brix</string>
+    <string name="lblDescription_activity_sugar_correction">За да определите захарния градус на гроздовата мъст са ви нужни битов захаромер и
+        термометър.
+        Поставете уредите в съда с течността и изчакайте до отчитане на стабилни стойности. Въведете отчетените
+        стойности в полетата по-долу и натиснете бутона [измери]
+    </string>
+    <string name="lblInputTemperature_activity_sugar_correction">показания на термометъра(10°C – 30°C)</string>
+    <string name="txtInputTemperature_activity_sugar_correction">20</string>
+    <string name="lblInputDegree_activity_sugar_correction">показания на захаромера(-6°Brix – 36°Brix)</string>
+    <string name="txtInputDegree_activity_sugar_correction">23</string>
+    <string name="btnCorrectionOK_activity_sugar_correction">измери</string>
+    <string name="lblResult_activity_sugar_correction">градус на гроздовата мъст °Brix</string>
+    <string name="txtResult_activity_sugar_correction"/>
+    <!-- activity_solution -->
     <string name="lblTitle_activity_solution">Разреждане на ракия</string>
     <string name="lblDescription_activity_solution">За да понижите градуса на ракията трябва да добавите дестилирана
         вода (или по-слаба ракия разредител, което не се препоръчва но е възможно). Въведете стойностите в полетата и
@@ -34,6 +54,21 @@
     <string name="btnSolutionOK_activity_solution">изчисли</string>
     <string name="lblResult_activity_solution">литри вода(разредител), които да добавите</string>
     <string name="txtResult_activity_solution"/>
+    <!-- activity_chaptalization -->
+    <string name="lblTitle_activity_chaptalization">Шаптализация на гроздова мъст</string>
+    <string name="lblDescription_activity_chaptalization">Ако концентрацията на захароза в гроздовата мъст е под 20°Brix или желаете да повишите алкохолното съдържание на виното, трябва да добавите захар. Този процес се нарича ШАПТАЛИЗАЦИЯ - наречен на наполеоновия аграрен министър, мосю Жан-Антоан Шаптал, който издал първото официално разрешение за тази практика. Въведете стойностите в полетата и натиснете бутона [изчисли].</string>
+    <string name="lblSourceDegree_activity_chaptalization">°Brix на гроздовата мъст</string>
+    <string name="txtSourceDegree_activity_chaptalization">20</string>
+    <string name="btnCorrectSourceDegree_activity_chaptalization">измери</string>
+    <string name="lblSourceVolume_activity_chaptalization">литри на гроздовата мъст</string>
+    <string name="txtSourceVolume_activity_chaptalization">100</string>
+    <string name="lblSugarDensity_activity_chaptalization">концентрация на захароза(98–99% за бяла кристална захар)</string>
+    <string name="txtSugarDensity_activity_chaptalization">99</string>
+    <string name="lblTargetDegree_activity_chaptalization">°Brix на желаната гроздова мъст</string>
+    <string name="txtTargetDegree_activity_chaptalization">23</string>
+    <string name="btnChaptalizationOK_activity_chaptalization">изчисли</string>
+    <string name="lblResult_activity_chaptalization">захар в грама, които да добавите</string>
+    <string name="txtResult_activity_chaptalization"/>
     <!-- Error messages -->
     <string name="error_correctionService_setTemperature_empty">Въведете температура на р-ра!</string>
     <string name="error_correctionService_setTemperature_outOfRange">Температурата трябва да е &gt;= 0C° и &lt;= 30C°!
@@ -49,12 +84,22 @@
     <string name="error_solutionService_setSourceVolume_empty">Въведете обема на силния р-р в л.!</string>
     <string name="error_solutionService_setSourceVolume_outOfRange">Обема на силния р-р трябва да е > 0л!</string>
     <string name="error_solutionService_setDiluentDegree_empty">Въведете градуса на слабия р-р!</string>
-    <string name="error_solutionService_setDiluentDegree_outOfRange">Градуса на слабия р-р трябва да е &gt;= 0 и &lt; от
-        градуса на силния р-р!
-    </string>
+    <string name="error_solutionService_setDiluentDegree_outOfRange">Градуса на слабия р-р трябва да е &gt;= 0 и &lt; от градуса на силния р-р!</string>
     <string name="error_solutionService_setTargetDegree_empty">Въведете градуса на желания р-р!</string>
-    <string name="error_solutionService_setTargetDegree_outOfRange">Градуса на желания р-р трябва да е &gt; от градуса
-        на слабия р-р и &lt; от градуса на силния р-р!
-    </string>
+    <string name="error_solutionService_setTargetDegree_outOfRange">Градуса на желания р-р трябва да е &gt; от градуса на слабия р-р и &lt; от градуса на силния р-р!</string>
+
+    <string name="error_chaptalizationService_setSourceDegree_empty">Въведете измерената концентрацията на захари в гроздовата мъст!</string>
+    <string name="error_chaptalizationService_setSourceDegree_outOfRange">Концентрацията на захари в гроздовата мъст трябва да е &gt; 12°Brix и &lt;= 24°Brix!</string>
+    <string name="error_chaptalizationService_setSourceVolume_empty">Въведете обема на гроздовата мъст в л.!</string>
+    <string name="error_chaptalizationService_setSourceVolume_outOfRange">Обема на гроздовата мъст трябва да е > 0л!</string>
+    <string name="error_chaptalizationService_setTargetDegree_empty">Въведете желаната концентрация на захари!</string>
+    <string name="error_chaptalizationService_setTargetDegree_outOfRange">Желаната концентрация трябва да е &gt; от измерената и &lt; от 30°Brix!</string>
+    <string name="error_chaptalizationService_setSugarDensity_empty">Въведете концентрацията на захароза в захарта!</string>
+    <string name="error_chaptalizationService_setSugarDensity_outOfRange">Концентрацията на захароза в захарта трябва да е от 90% до 100%!</string>
+
+    <string name="error_sugarCorrectionService_setTemperature_empty">Въведете температура на грозовата мъст!</string>
+    <string name="error_sugarCorrectionService_setTemperature_outOfRange">Температурата на грозовата мъст трябва да е &gt;= 10°C и &lt;= 30°C!</string>
+    <string name="error_sugarCorrectionService_setDegree_empty">Въведете показания на захаромера!</string>
+    <string name="error_sugarCorrectionService_setDegree_outOfRange">Показанието на захаромера трябва да е &gt;= -6°Brix и &lt;= 36°Brix!</string>
     <!-- Strings used for fragments for navigation -->
 </resources>

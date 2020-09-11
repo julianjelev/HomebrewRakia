@@ -2,42 +2,41 @@ package com.example.homebrewrakia;
 
 import android.content.Context;
 import android.content.res.Resources;
+
+import java.io.IOException;
 import java.text.NumberFormat;
 import java.text.ParseException;
-import java.io.IOException;
 import java.util.AbstractMap;
 import java.util.Locale;
 import java.util.Map;
 
-public class CorrectionService {
-
+public class SugarCorrectionService {
     private final Context context;
     private float inputTemperature;
     private float inputDegree;
     private float outputDegree;
     private final NumberFormat format;
 
-    public CorrectionService(Context con) {
+    public SugarCorrectionService(Context con) {
         this.context = con;
         this.inputTemperature = 20;
-        this.inputDegree = 100;
-        this.outputDegree = 100;
+        this.inputDegree = 23;
+        this.outputDegree = 23;
         this.format = NumberFormat.getInstance(Locale.getDefault());
     }
 
     public Map.Entry<Boolean, String> trySetTemperature(String value) {
-        //;
         if (value.equals(""))
-            return new AbstractMap.SimpleEntry<>(false, context.getResources().getString(R.string.error_correctionService_setTemperature_empty));
+            return new AbstractMap.SimpleEntry<>(false, context.getResources().getString(R.string.error_sugarCorrectionService_setTemperature_empty));
         try {
             Number number = format.parse(value);
             float v = Float.parseFloat(String.valueOf(number));
-            if (v >= 0.0 && v <= 30.0) {
+            if (v >= 10.0 && v <= 30.0) {
                 inputTemperature = Math.round(v);
                 return new AbstractMap.SimpleEntry<>(true, "");
             }
             else
-                return new AbstractMap.SimpleEntry<>(false, context.getResources().getString(R.string.error_correctionService_setTemperature_outOfRange));
+                return new AbstractMap.SimpleEntry<>(false, context.getResources().getString(R.string.error_sugarCorrectionService_setTemperature_outOfRange));
         }
         catch (NullPointerException | NumberFormatException | ParseException ex) {
             inputTemperature = 20f;
@@ -47,16 +46,16 @@ public class CorrectionService {
 
     public Map.Entry<Boolean, String> trySetDegree(String value) {
         if (value.equals(""))
-            return new AbstractMap.SimpleEntry<>(false, context.getResources().getString(R.string.error_correctionService_setDegree_empty));
+            return new AbstractMap.SimpleEntry<>(false, context.getResources().getString(R.string.error_sugarCorrectionService_setDegree_empty));
         try {
             Number number = format.parse(value);
             float v = Float.parseFloat(String.valueOf(number));
-            if (v >= 5.5 && v <= 100.0) {
+            if (v >= -6.0 && v <= 36.0) {
                 inputDegree = v;
                 return new AbstractMap.SimpleEntry<>(true, "");
             }
             else
-                return new AbstractMap.SimpleEntry<>(false, context.getResources().getString(R.string.error_correctionService_setDegree_outOfRange));
+                return new AbstractMap.SimpleEntry<>(false, context.getResources().getString(R.string.error_sugarCorrectionService_setDegree_outOfRange));
         }
         catch (NullPointerException | NumberFormatException | ParseException ex) {
             inputDegree = 100f;
@@ -69,14 +68,14 @@ public class CorrectionService {
             correctDegree();
         }
         catch (Resources.NotFoundException | IOException | NumberFormatException | ParseException ignored) {
-            outputDegree = 100f;
+            outputDegree = 0f;
         }
         return outputDegree;
     }
 
     private void correctDegree() throws Resources.NotFoundException, IOException, NumberFormatException, ParseException {
         CSVParser parser = new CSVParser();
-        if (parser.parse(context, Constants.DATA_SOURCE_TABLE_ETHANOL)) {
+        if (parser.parse(context, Constants.DATA_SOURCE_TABLE_SUGAR_BRIX)) {
             NumberFormat csvFormat = NumberFormat.getInstance(Locale.ENGLISH);
             int colsCount = parser.getColsCount();
             int rowsCount = parser.getRowsCount();

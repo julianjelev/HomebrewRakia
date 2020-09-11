@@ -17,18 +17,58 @@
             app:layout_constraintHorizontal_bias="0.5" app:layout_constraintVertical_bias="0.0"
             android:scaleType="centerInside" android:cropToPadding="false" android:adjustViewBounds="true"/>
     <Button
+            android:id="@+id/btnSolution"
             android:text="@string/btnSolution_activity_main"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" android:id="@+id/btnSolution"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
             app:layout_constraintTop_toBottomOf="@+id/imageViewLogo"
-            app:layout_constraintBottom_toTopOf="@+id/btnCorrection" app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"/>
-    <Button
-            android:text="@string/btnCorrection_activity_main"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" android:id="@+id/btnCorrection"
-            app:layout_constraintTop_toBottomOf="@+id/btnSolution" app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent" app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintBottom_toTopOf="@+id/btnCorrection"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintWidth_percent="0.75"
     />
-
+    <Button
+            android:id="@+id/btnCorrection"
+            android:text="@string/btnCorrection_activity_main"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@+id/btnSolution"
+            app:layout_constraintBottom_toTopOf="@+id/btnChaptalization"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintWidth_percent="0.75"
+    />
+    <Button
+            android:id="@+id/btnChaptalization"
+            android:text="@string/btnChaptalization_activity_main"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@+id/btnCorrection"
+            app:layout_constraintBottom_toTopOf="@+id/btnSugarCorrection"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintWidth_percent="0.75"
+    />
+    <Button
+            android:id="@+id/btnSugarCorrection"
+            android:text="@string/btnSugarCorrection_activity_main"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@+id/btnChaptalization"
+            app:layout_constraintBottom_toTopOf="@+id/btnSulfite"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintWidth_percent="0.75"
+    />
+    <Button
+            android:id="@+id/btnSulfite"
+            android:text="@string/btnSulfite_activity_main"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@+id/btnSugarCorrection"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintWidth_percent="0.75"
+    />
 </android.support.constraint.ConstraintLayout>

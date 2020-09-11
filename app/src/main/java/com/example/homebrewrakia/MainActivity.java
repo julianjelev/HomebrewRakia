@@ -15,6 +15,9 @@ public class MainActivity extends AppCompatActivity {
 
         Button btnSolution = findViewById(R.id.btnSolution);
         Button btnCorrection = findViewById(R.id.btnCorrection);
+        Button btnChaptalization = findViewById(R.id.btnChaptalization);
+        Button btnSugarCorrection = findViewById(R.id.btnSugarCorrection);
+        Button btnSulfite = findViewById(R.id.btnSulfite);
 
         //Define and attach click listeners
         btnSolution.setOnClickListener(new View.OnClickListener() {
@@ -29,6 +32,24 @@ public class MainActivity extends AppCompatActivity {
                 startCorrectionActivity();
             }
         });
+        btnChaptalization.setOnClickListener(new View.OnClickListener() {
+             @Override
+             public void onClick(View view) {
+                 startChaptalizationActivity();
+             }
+        });
+        btnSugarCorrection.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startSugarCorrectionActivity();
+            }
+        });
+        btnSulfite.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startSulfiteActivity();
+            }
+        });
     }
 
     private void startSolutionActivity() {
@@ -41,5 +62,23 @@ public class MainActivity extends AppCompatActivity {
         Intent correctionIntent = new Intent(this, CorrectionActivity.class);
         correctionIntent.putExtra(Constants.EXTRA_RETURN_TO_CALLER, false);
         startActivity(correctionIntent);
+    }
+
+    private void startChaptalizationActivity() {
+        Intent chaptalizationIntent = new Intent(this, ChaptalizationActivity.class);
+        chaptalizationIntent.putExtra(Constants.EXTRA_RETURN_TO_CALLER, false);
+        startActivity(chaptalizationIntent);
+    }
+
+    private void startSugarCorrectionActivity() {
+        Intent sugarCorrectionIntent = new Intent(this, SugarCorrectionActivity.class);
+        sugarCorrectionIntent.putExtra(Constants.EXTRA_RETURN_TO_CALLER, false);
+        startActivity(sugarCorrectionIntent);
+    }
+
+    private void startSulfiteActivity() {
+        Intent sulfiteIntent = new Intent(this, SulfiteActivity.class);
+        sulfiteIntent.putExtra(Constants.EXTRA_RETURN_TO_CALLER, false);
+        startActivity(sulfiteIntent);
     }
 }

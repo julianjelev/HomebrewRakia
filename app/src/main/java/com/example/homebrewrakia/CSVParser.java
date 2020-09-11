@@ -34,10 +34,17 @@ public class CSVParser {
         return row.elementAt(colIndex);
     }
 
-    public boolean parse(Context con) throws Resources.NotFoundException, IOException {
+    public boolean parse(Context con, int dataSource) throws Resources.NotFoundException, IOException {
         InputStream inStream;
         try {
-            inStream = con.getResources().openRawResource(R.raw.data);//Resources.getSystem().openRawResource(R.raw.data);
+            if (dataSource == Constants.DATA_SOURCE_TABLE_ETHANOL)
+                inStream = con.getResources().openRawResource(R.raw.data);
+            else if (dataSource == Constants.DATA_SOURCE_TABLE_SUGAR_GRAVITY)
+                inStream = con.getResources().openRawResource(R.raw.data_sugar2);
+            else if (dataSource == Constants.DATA_SOURCE_TABLE_SUGAR_BRIX)
+                inStream = con.getResources().openRawResource(R.raw.data_sugar1);
+            else
+                throw new Resources.NotFoundException("Undefined, dataSource = " + dataSource);
         }
         catch (Resources.NotFoundException ex) {
             throw new Resources.NotFoundException("failed to make a connection with the file" + ex.getMessage());
